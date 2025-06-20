@@ -1,0 +1,106 @@
+/* Global Resets and Basic Styling */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  background-color: #f4f7f6; /* Light gray background */
+  color: #333; /* Dark gray text */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  text-align: center;
+  padding: 0 20px; /* Add some horizontal padding */
+}
+
+/* Main content container */
+.main-content {
+  max-width: 960px;
+  margin: 20px auto; /* Center content and add some top/bottom margin */
+  padding: 20px;
+  background-color: #fff; /* White background for content */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px;
+  text-align: left; /* Align text to the left for content sections */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #2c3e50; /* Darker blue-gray for headings */
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center; /* Center main page titles if desired */
+}
+
+h2 {
+  font-size: 1.8em;
+  border-bottom: 2px solid #3498db; /* Blue accent for H2 */
+  padding-bottom: 0.3em;
+  margin-bottom: 1em;
+}
+
+/* Links */
+a {
+  color: #3498db; /* Blue links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Basic structure for sections (can be refined in component-specific CSS) */
+div > h1:first-child, div > h2:first-child {
+  margin-top: 0; /* Remove top margin from first heading in a div */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App {
+    padding: 0 10px;
+  }
+
+  .main-content {
+    margin: 10px auto;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+/* Navigation styles will be added in the next step */
+/* Component-specific styles can be added below or in separate files */
+
+/* Example: Skills list styling */
+.skills-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-list li {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  display: inline-block; /* For badge-like appearance */
+  font-size: 0.9em;
+}
