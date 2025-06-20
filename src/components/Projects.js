@@ -1,29 +1,59 @@
 import React from 'react';
+// import './Projects.css'; // If you decide to create a separate CSS file
 
 function Projects() {
+  // Sample project data - replace with actual or more detailed data
+  const projectData = [
+    {
+      id: 1,
+      title: 'E-commerce Platform',
+      description: 'A full-featured e-commerce platform with product listings, cart functionality, and user accounts. Focused on a seamless user experience.',
+      technologies: 'React, Node.js, Express, MongoDB, Stripe API',
+      demoLink: '#', // Replace with actual link
+      codeLink: '#', // Replace with actual link
+    },
+    {
+      id: 2,
+      title: 'AI Powered Smart Thermostat',
+      description: 'Developed firmware and cloud connectivity for a smart thermostat that learns user preferences using ML.',
+      technologies: 'Python, TensorFlow Lite, C++, AWS IoT',
+      demoLink: '#',
+      codeLink: '#',
+    },
+    {
+      id: 3,
+      title: 'Portfolio Website (This one!)',
+      description: 'A responsive personal portfolio website to showcase projects, skills, and experience. Built with React and modern CSS.',
+      technologies: 'React, JavaScript, HTML, CSS',
+      // demoLink: '#', // No demo link for itself usually
+      codeLink: '#', // Link to its own repo if public
+    }
+  ];
+
   return (
-    <div>
+    <section className="projects-section">
       <h2>My Projects</h2>
-      <p>Here are some of the projects I've worked on, showcasing my skills and passion for development.</p>
-
-      {/* Project Item 1 */}
-      <div className='project-item' style={{ marginBottom: '20px', paddingBottom: '10px', borderBottom: '1px solid #eee' }}>
-        <h3>Project Title 1</h3>
-        <p><strong>Technologies Used:</strong> React, Node.js, MongoDB</p>
-        <p>A brief description of the project, its goals, and your role. Highlight key features and achievements.</p>
-        {/* <a href='#' target='_blank' rel='noopener noreferrer'>View Project/Demo</a> | <a href='#' target='_blank' rel='noopener noreferrer'>View Code</a> */}
+      <p className="projects-intro">Here are some of the projects I've worked on, showcasing my skills and passion for development.</p>
+      <div className="projects-grid">
+        {projectData.map(project => (
+          <div key={project.id} className="project-card">
+            <h3>{project.title}</h3>
+            <p className="project-description">{project.description}</p>
+            <p className="project-technologies">
+              <strong>Technologies Used:</strong> {project.technologies}
+            </p>
+            <div className="project-links">
+              {project.demoLink && project.demoLink !== '#' && (
+                <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="project-link-button">View Demo</a>
+              )}
+              {project.codeLink && project.codeLink !== '#' && (
+                <a href={project.codeLink} target="_blank" rel="noopener noreferrer" className="project-link-button">View Code</a>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
-
-      {/* Project Item 2 */}
-      <div className='project-item' style={{ marginBottom: '20px', paddingBottom: '10px', borderBottom: '1px solid #eee' }}>
-        <h3>Project Title 2</h3>
-        <p><strong>Technologies Used:</strong> Python, TensorFlow, Embedded C</p>
-        <p>Another project description. Focus on different skills or challenges, perhaps related to AI or embedded systems.</p>
-        {/* <a href='#' target='_blank' rel='noopener noreferrer'>View Project/Demo</a> | <a href='#' target='_blank' rel='noopener noreferrer'>View Code</a> */}
-      </div>
-
-      {/* Add more project items as needed */}
-    </div>
+    </section>
   );
 }
 
